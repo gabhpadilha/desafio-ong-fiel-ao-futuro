@@ -35,7 +35,9 @@ function carregarRota() {
 
     rotaAtual = rota;
 
-    fetch(`html/${rota}.html`)
+    const baseUrl = import.meta.env.BASE_URL;
+    
+    fetch(`${baseUrl}html/${rota}.html`)
         .then(resposta => {
             if (!resposta.ok) throw new Error('Erro na requisição');
             return resposta.text();
