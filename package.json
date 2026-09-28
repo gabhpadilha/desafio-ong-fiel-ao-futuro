@@ -1,0 +1,15 @@
+{
+  "name": "desafio-ong-fiel-ao-futuro",
+  "version": "1.0.0",
+  "description": "> **⚠️ Nota:** Este é um projeto acadêmico. O \"Instituto Fiel ao Futuro\" é uma ONG fictícia criada exclusivamente para fins educacionais.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^8.3.1"
+  }
+}
