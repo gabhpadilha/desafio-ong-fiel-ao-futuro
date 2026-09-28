@@ -7,7 +7,6 @@
     <meta name="description" content="Plataforma do Instituto Fiel ao Futuro para apresentação de projetos sociais e cadastro de voluntários.">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-   
 </head>
 <body>
     <header>
@@ -16,10 +15,14 @@
             <h1>Fiel ao Futuro</h1>
         </div>
         
-        <input type="checkbox" id="bt_menu" class="checkbox-toggle">
-        <label for="bt_menu" class="menu-toggle">&#9776;</label>
+        <!-- Ocultado do leitor de ecrã para evitar confusão (aria-hidden) -->
+        <input type="checkbox" id="bt_menu" class="checkbox-toggle" aria-hidden="true">
+        
+        <!-- Descrição da ação do botão de menu para invisuais (aria-label) -->
+        <label for="bt_menu" class="menu-toggle" aria-label="Abrir menu de navegação">&#9776;</label>
 
-        <nav class="nav-menu">
+        <!-- Identificação clara da navegação principal -->
+        <nav class="nav-menu" aria-label="Menu principal">
             <ul>
                 <!-- Links atualizados para a SPA -->
                 <li><a href="#inicio">Início</a></li>
@@ -29,7 +32,8 @@
         </nav>
     </header>
 
-    <main id="app">
+    <!-- Reforço estrutural (role="main") -->
+    <main id="app" role="main">
         <!-- O JS vai injetar o miolo aqui dentro -->
     </main>
 

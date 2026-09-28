@@ -10,15 +10,21 @@
             <legend>Dados Pessoais e Contato</legend>
             <div class="input-group">
                 <label for="nome">Nome Completo</label>
-                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                <!-- Atributo aria-required adicionado -->
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required aria-required="true">
+                <!-- Span com aria-live="polite" preparado para injetar as validações do JS -->
+                <span class="erro-mensagem" aria-live="polite"></span>
             </div>
             <div class="input-group">
                 <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                <!-- Atributo aria-required adicionado -->
+                <input type="email" id="email" name="email" placeholder="seu@email.com" required aria-required="true">
+                <span class="erro-mensagem" aria-live="polite"></span>
             </div>
             <div class="input-group">
                 <label for="telefone">WhatsApp</label>
                 <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+                <span class="erro-mensagem" aria-live="polite"></span>
             </div>
         </fieldset>
 
@@ -35,14 +41,18 @@
             </div>
         </fieldset>
 
-        <button type="submit" class="btn-primary" style="display: block; width: 100%; text-align: center;">Finalizar Cadastro</button>
+        <!-- Atributo aria-label adicionado ao botão de submissão -->
+        <button type="submit" class="btn-primary" style="display: block; width: 100%; text-align: center;" aria-label="Enviar formulário de cadastro">Finalizar Cadastro</button>
     </form>
 
-    <div id="modalConfirmacao" class="modal-overlay">
+    <!-- Atributos role="dialog" e aria-modal="true" adicionados ao container do modal -->
+    <div id="modalConfirmacao" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="titulo-modal">
         <div class="modal-content">
-            <h3 style="color: var(--cor-primaria); margin-bottom: 10px;">Cadastro Recebido! ⚽</h3>
+            <!-- ID adicionado para ser lido pelo aria-labelledby do modal -->
+            <h3 id="titulo-modal" style="color: var(--cor-primaria); margin-bottom: 10px;">Cadastro Recebido! ⚽</h3>
             <p>Obrigado por querer fazer a diferença. Nossa equipe entrará em contato com você pelo WhatsApp em breve.</p>
-            <a href="#cadastro" class="btn-primary modal-close">Fechar</a>
+            <!-- Atributo aria-label adicionado ao botão de fechar -->
+            <a href="#cadastro" class="btn-primary modal-close" aria-label="Fechar janela de confirmação">Fechar</a>
         </div>
     </div>
 </div>
