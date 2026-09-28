@@ -1,0 +1,415 @@
+/* =========================================
+   1. DESIGN SYSTEM (Variáveis globais)
+   ========================================= */
+:root {
+    --cor-fundo-base: #121212;
+    --cor-fundo-card: #1f1f1f;
+    --cor-texto-principal: #f5f5f5;
+    --cor-texto-secundario: #a0a0a0;
+    --cor-primaria: #c8102e;
+    --cor-primaria-hover: #9b0c22;
+    --cor-borda: #333333;
+    --cor-alerta: #ffcc00;
+    
+    --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    --espaco-xs: 0.5rem;
+    --espaco-sm: 1rem;
+    --espaco-md: 1.5rem;
+    --espaco-lg: 2rem;
+    --espaco-xl: 4rem;
+}
+
+/* =========================================
+   2. RESET BÁSICO
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cor-fundo-base);
+    color: var(--cor-texto-principal);
+    font-family: var(--fonte-principal);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: var(--cor-texto-principal);
+}
+
+/* =========================================
+   3. CABEÇALHO E NAVEGAÇÃO
+   ========================================= */
+header {
+    background-color: var(--cor-fundo-card);
+    padding: var(--espaco-sm) 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--cor-primaria);
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--espaco-md);
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: var(--espaco-lg);
+}
+
+nav ul li a {
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--cor-primaria);
+}
+
+/* --- Truque do Checkbox (Menu Hambúrguer) --- */
+.checkbox-toggle {
+    display: none;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    color: var(--cor-texto-principal);
+    cursor: pointer;
+}
+
+/* =========================================
+   4. COMPONENTES GERAIS (Botões e Rodapé)
+   ========================================= */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: var(--espaco-sm);
+}
+
+.btn-primary:hover {
+    background-color: var(--cor-primaria-hover);
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+footer {
+    text-align: center;
+    padding: var(--espaco-lg);
+    background-color: var(--cor-fundo-card);
+    border-top: 1px solid var(--cor-borda);
+    margin-top: var(--espaco-xl);
+    font-size: 0.875rem;
+    color: var(--cor-texto-secundario);
+}
+
+/* =========================================
+   5. PÁGINA INICIAL (Hero e Conteúdo)
+   ========================================= */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espaco-xl);
+    padding: var(--espaco-xl) 5%;
+    align-items: center;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: var(--espaco-sm);
+}
+
+.hero-image img {
+    border-radius: 8px;
+}
+
+.about, .contact-info {
+    padding: var(--espaco-lg) 5%;
+    background-color: var(--cor-fundo-card);
+    margin: 0 5% var(--espaco-lg);
+    border-radius: 8px;
+    border-left: 4px solid var(--cor-primaria);
+}
+
+.subtitle {
+    color: var(--cor-primaria);
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+/* =========================================
+   6. PÁGINA DE PROJETOS (Grid de 12 Colunas)
+   ========================================= */
+.page-header {
+    text-align: center;
+    padding: var(--espaco-xl) 5% var(--espaco-sm);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--espaco-lg);
+    padding: var(--espaco-lg) 5%;
+}
+
+.project-card {
+    grid-column: span 12; 
+    background-color: var(--cor-fundo-card);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--cor-borda);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    padding: var(--espaco-md) var(--espaco-md) var(--espaco-xs);
+    color: var(--cor-primaria);
+    font-size: 1.5rem;
+}
+
+.project-card p {
+    padding: 0 var(--espaco-md) var(--espaco-md);
+}
+
+/* =========================================
+   7. PÁGINA DE CADASTRO (Formulário Semântico)
+   ========================================= */
+.form-container {
+    padding: var(--espaco-lg) 5%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-intro {
+    text-align: center;
+    margin-bottom: var(--espaco-xl);
+}
+
+fieldset {
+    border: 1px solid var(--cor-borda);
+    padding: var(--espaco-lg);
+    margin-bottom: var(--espaco-lg);
+    border-radius: 8px;
+    background-color: var(--cor-fundo-card);
+}
+
+legend {
+    padding: 0 var(--espaco-xs);
+    font-weight: bold;
+    color: var(--cor-primaria);
+    font-size: 1.2rem;
+}
+
+.input-group {
+    margin-bottom: var(--espaco-md);
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    margin-bottom: var(--espaco-xs);
+    font-size: 0.875rem;
+}
+
+.input-group input, 
+.input-group select {
+    padding: 12px;
+    background-color: var(--cor-fundo-base);
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-texto-principal);
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.input-group input:focus, 
+.input-group select:focus {
+    border-color: var(--cor-primaria);
+}
+
+/* Validação visual do formulário */
+.input-group input:not(:placeholder-shown):valid {
+    border-color: #28a745; 
+}
+.input-group input:not(:placeholder-shown):invalid {
+    border-color: var(--cor-alerta); 
+}
+
+/* =========================================
+   8. COMPONENTES DE FEEDBACK
+   ========================================= */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+}
+.alert-success {
+    background-color: rgba(40, 167, 69, 0.1);
+    border: 1px solid #28a745;
+    color: #28a745;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: var(--cor-primaria);
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.modal-overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: var(--cor-fundo-card);
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 400px;
+    text-align: center;
+    border: 1px solid var(--cor-primaria);
+}
+
+.modal-close {
+    margin-top: 20px;
+}
+
+/* =========================================
+   9. BREAKPOINTS (Responsividade)
+   ========================================= */
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 85px; 
+        left: 0;
+        background-color: var(--cor-fundo-card);
+        border-top: 2px solid var(--cor-primaria);
+        z-index: 99;
+    }
+
+    .checkbox-toggle:checked ~ .nav-menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav-menu ul li {
+        text-align: center;
+        padding: var(--espaco-sm);
+        border-bottom: 1px solid var(--cor-borda);
+    }
+}
+
+@media (min-width: 480px) {
+    .projects-grid { gap: 25px; }
+}
+
+@media (min-width: 768px) {
+    .project-card { grid-column: span 6; }
+    .hero { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 1024px) {
+    .project-card { grid-column: span 4; }
+}
+
+@media (min-width: 1200px) {
+    .projects-grid { padding: var(--espaco-xl) 10%; }
+}
+
+@media (min-width: 1440px) {
+    .projects-grid {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}
+
+.input-error {
+    border-color: #ff4d4d !important;
+    outline: none;
+}
+
+.msg-error {
+    color: #ff4d4d;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: block;
+    font-weight: bold;
+}
