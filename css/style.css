@@ -46,6 +46,12 @@ a {
     color: var(--cor-texto-principal);
 }
 
+/* Adição para acessibilidade WCAG 2.1: foco visível em links e botões */
+a:focus, button:focus, .menu-toggle:focus {
+    outline: 2px solid var(--cor-primaria);
+    outline-offset: 2px;
+}
+
 /* =========================================
    3. CABEÇALHO E NAVEGAÇÃO
    ========================================= */
@@ -271,6 +277,9 @@ legend {
 .input-group input:focus, 
 .input-group select:focus {
     border-color: var(--cor-primaria);
+    /* Adições para garantir a acessibilidade WCAG 2.1 */
+    outline: 2px solid var(--cor-primaria);
+    outline-offset: 2px;
 }
 
 /* Validação visual do formulário */
