@@ -22,5 +22,14 @@ Plataforma web desenvolvida como projeto prático para o curso de Análise e Des
 1. Clone este repositório no seu terminal:
    ```bash
    git clone [https://github.com/gabhpadilha/desafio-ong-fiel-ao-futuro.git](https://github.com/gabhpadilha/desafio-ong-fiel-ao-futuro.git)
+   ```
+2. Abra a pasta do projeto no **Visual Studio Code**.
+3. Inicie o projeto utilizando a extensão **Live Server** (necessário para rodar os módulos do JavaScript corretamente no navegador).
+
+## 🔀 Estratégia de Versionamento
+
+O repositório foi gerido seguindo o padrão **GitFlow**, com uma clara separação estrutural entre o código de produção (`main`), o ambiente de desenvolvimento (`develop`) e as novas implementações (`feature/`). 
+
+O histórico de *commits* respeita as convenções de **Conventional Commits** e as entregas estão marcadas com versionamento semântico (tags `v1.0.0`, `v1.0.1` e `v1.0.2`).
 
    
